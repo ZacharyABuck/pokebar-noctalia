@@ -3,11 +3,11 @@
 # A thin frontend over the `pokebar` CLI: the CLI extracts GIF frames into
 # data_dir (frame_N.png, meta.txt, info.txt) and this widget cycles them.
 
-id = "pokebar/pokebar"
-name = "PokeBar"
-version = "0.1.0"
+id = "zacharyabuck/pokebar-noctalia"
+name = "PokeBar Noctalia"
+version = "0.0.1"
 plugin_api = 14
-author = "pokebar"
+author = "zacharyabuck"
 license = "MIT"
 # Frame extraction needs any ONE of pillow / imagemagick / ffmpeg (pokebar tries them in that order).
 dependencies = ["pokebar", "python-pillow", "imagemagick", "ffmpeg"]
