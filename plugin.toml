@@ -1,0 +1,50 @@
+# PokeBar - animated Gen 1 Pokemon in your Noctalia bar.
+#
+# A thin frontend over the `pokebar` CLI: the CLI extracts GIF frames into
+# data_dir (frame_N.png, meta.txt, info.txt) and this widget cycles them.
+
+id = "pokebar/pokebar"
+name = "PokeBar"
+version = "0.1.0"
+plugin_api = 14
+author = "pokebar"
+license = "MIT"
+# Frame extraction needs any ONE of pillow / imagemagick / ffmpeg (pokebar tries them in that order).
+dependencies = ["pokebar", "python-pillow", "imagemagick", "ffmpeg"]
+icon = "paw"
+description = "Animated Gen 1 Pokemon running in your bar."
+tags = ["fun", "animation"]
+
+[[widget]]
+id = "pokemon"
+entry = "widget.luau"
+
+  # Middle click opens settings by default; free it so it can pick a random Pokemon.
+  [widget.actions]
+  middle = "none"
+
+  [[widget.setting]]
+  key = "size"
+  type = "int"
+  label_key = "settings.size.label"
+  description_key = "settings.size.description"
+  default = 24
+  min = 12
+  max = 64
+
+  [[widget.setting]]
+  key = "interval_ms"
+  type = "int"
+  label_key = "settings.interval_ms.label"
+  description_key = "settings.interval_ms.description"
+  default = 120
+  min = 40
+  max = 1000
+
+  [[widget.setting]]
+  key = "data_dir"
+  type = "folder"
+  label_key = "settings.data_dir.label"
+  description_key = "settings.data_dir.description"
+  default = "~/.config/pokebar/current"
+  advanced = true

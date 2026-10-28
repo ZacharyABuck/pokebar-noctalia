@@ -1,0 +1,16 @@
+{
+  "settings": {
+    "data_dir": {
+      "description": "Folder the pokebar CLI writes frame_N.png, meta.txt and info.txt into",
+      "label": "Frame folder"
+    },
+    "interval_ms": {
+      "description": "Milliseconds between animation frames",
+      "label": "Frame delay"
+    },
+    "size": {
+      "description": "Sprite size in pixels",
+      "label": "Size"
+    }
+  }
+}
